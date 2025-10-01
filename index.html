@@ -24,14 +24,14 @@
         .bar-chart-container {
             position: relative;
             margin: auto;
-            height: 500px;
+            height: 600px; /* Increased height for more data */
             width: 100%;
             max-width: 1000px;
         }
         .horizontal-bar-chart-container {
              position: relative;
             margin: auto;
-            height: 400px;
+            height: 500px; /* Increased height for more data */
             width: 100%;
             max-width: 800px;
         }
@@ -118,7 +118,7 @@
                 <div class="bar-chart-container">
                     <canvas id="complaintsChart"></canvas>
                 </div>
-                 <p class="text-center text-sm text-gray-500 mt-4">Shows a striking disparity in complaint volumes, with Germany, Ireland, and the Netherlands receiving the most.</p>
+                 <p class="text-center text-sm text-gray-500 mt-4">Shows a striking disparity in complaint volumes, with Germany, Ireland, and the Netherlands receiving the most.<br>Note: 'Not specified' values for Romania and France are represented as 0.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -273,7 +273,7 @@
                 labels: ['Fully operational', 'Partially operational', 'Not operational'],
                 datasets: [{
                     label: 'Implementation of the DSA in 2024',
-                    data: [11, 3, 4], // Updated based on new data
+                    data: [17, 3, 4], // Updated based on new data
                     backgroundColor: [
                         '#3b82f6', // blue-500
                         '#60a5fa', // blue-400
@@ -302,7 +302,7 @@
                 labels: ['Centralised enforcement', 'Divided enforcement'],
                 datasets: [{
                     label: 'Designation of enforcers',
-                    data: [8, 10], // Updated based on new data
+                    data: [11, 13], // Updated based on new data
                     backgroundColor: [
                         '#1e40af', // blue-800
                         '#60a5fa'  // blue-400
@@ -327,10 +327,10 @@
         new Chart(complaintsCtx, {
             type: 'bar',
             data: {
-                labels: ['Germany', 'Ireland', 'Netherlands', 'Denmark', 'Finland', 'Portugal', 'Greece', 'Austria', 'Czech Republic', 'Spain', 'Luxembourg', 'Slovakia', 'Belgium', 'Italy', 'Croatia', 'Latvia', 'Lithuania', 'Bulgaria'],
+                labels: ['Germany', 'Ireland', 'Netherlands', 'Denmark', 'Finland', 'Portugal', 'Greece', 'Austria', 'Czech Republic', 'Spain', 'Sweden', 'Luxembourg', 'Hungary', 'Slovakia', 'Belgium', 'Italy', 'Malta', 'Slovenia', 'Croatia', 'Latvia', 'Lithuania', 'Bulgaria', 'Romania', 'France'],
                 datasets: [{
                     label: 'Total Complaints Received',
-                    data: [824, 322, 256, 119, 78, 65, 43, 34, 25, 24, 17, 11, 10, 8, 4, 3, 3, 0],
+                    data: [824, 322, 256, 119, 78, 65, 43, 34, 25, 24, 19, 17, 12, 11, 10, 8, 7, 7, 4, 3, 3, 0, 0, 0],
                     backgroundColor: '#60a5fa',
                     borderColor: '#3b82f6',
                     borderWidth: 1
@@ -369,10 +369,10 @@
         new Chart(irishFunnelCtx, {
             type: 'bar',
             data: {
-                labels: ['Germany', 'Netherlands', 'Finland', 'Denmark', 'Greece', 'Czech Rep.', 'Portugal', 'Belgium', 'Slovakia', 'Spain', 'Luxembourg'],
+                labels: ['Germany', 'Netherlands', 'Finland', 'Denmark', 'Greece', 'Hungary', 'Czech Rep.', 'Portugal', 'Belgium', 'Sweden', 'Slovakia', 'Malta', 'Spain', 'Luxembourg', 'Slovenia'],
                 datasets: [{
                     label: 'Complaints Forwarded to Ireland',
-                    data: [83, 52, 29, 17, 12, 8, 7, 7, 4, 3, 3],
+                    data: [83, 52, 29, 17, 12, 12, 8, 7, 7, 7, 4, 4, 3, 3, 1],
                     backgroundColor: '#1e40af',
                     borderColor: '#1d4ed8',
                     borderWidth: 1
@@ -409,4 +409,3 @@
     </script>
 </body>
 </html>
-
